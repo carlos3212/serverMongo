@@ -42,7 +42,7 @@ app.get('/usuario', function(req, res) {
 app.put('/usuario/:id', function(req, res) {
 
     let id = req.params.id;
-    let body = _.pick(req.body, ['nombre', 'email', 'img', 'role', 'estado']);
+    let body = _.pick(req.body, ['nombre','apellido', 'cedula', 'img', 'role', 'estado']);
 
     // delete body.password;
     // delete body.google;
@@ -79,7 +79,8 @@ app.post('/usuario', function(req, res) {
 
     let usuario = new Usuario({
         nombre: body.nombre,
-        email: body.email,
+        apellido: body.apellido,
+        cedula: body.cedula,
         password: bcrypt.hashSync(body.password, 10),
         role: body.role
     });
@@ -105,7 +106,7 @@ app.post('/usuario', function(req, res) {
 
 app.post('/login', function (req, res) {
     let body = req.body;
-    Usuario.findOne({ email: body.email }, (erro, usuarioDB)=>{
+    Usuario.findOne({ cedula: body.cedula }, (erro, usuarioDB)=>{
         if (erro) {
           return res.status(500).json({
              ok: false,
