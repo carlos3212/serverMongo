@@ -9,6 +9,7 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 
 app.use(require('./server/routes/usuario'));
+app.use(require('./server/routes/encuestas'));
 
 
 mongoose.connect(
