@@ -35,7 +35,7 @@ let encuestasSchema = new Schema({
         type: String,
         required: [true, 'La p1 es requerida'],
     },
-    Pregunta2: {
+    pregunta2: {
         type: String,
         required: [false, 'La p2 es requerida'],
     }
