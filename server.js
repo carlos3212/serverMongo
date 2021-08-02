@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(require('./server/routes/usuario'));
 app.use(require('./server/routes/encuestas'));
+app.use(require('./server/routes/supervisor'));
 
 
 mongoose.connect(
