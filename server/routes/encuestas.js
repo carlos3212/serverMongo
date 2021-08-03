@@ -52,6 +52,20 @@ app.post('/encuestas', function(req, res) {
         fecha: body.fecha,
         pregunta1: body.pregunta1,
         pregunta2: body.pregunta2,
+        pregunta3: body.pregunta3,
+        pregunta4: body.pregunta4,
+        pregunta5: body.pregunta5,
+        pregunta6: body.pregunta6,
+        pregunta7: body.pregunta7,
+        pregunta8: body.pregunta8,
+        pregunta9: body.pregunta9,
+        pregunta10: body.pregunta10,
+        pregunta11: body.pregunta11,
+        pregunta12: body.pregunta12,
+        pregunta13: body.pregunta13,
+        latitud: body.latitud,
+        longitud: body.longitud,
+       
         
 
     });

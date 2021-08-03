@@ -5,7 +5,10 @@ const _ = require('underscore');
 
 const Usuario = require('../models/usuario');
 
+
 const app = express();
+
+
 
 app.get('/usuario', function(req, res) {
 
@@ -74,15 +77,17 @@ app.put('/usuario/:id', function(req, res) {
 
 });
 
-app.post('/usuario', function(req, res) {
+app.post('/usuario',async (req, res)=> {
     let body = req.body;
+    const result= await cloudinary.v2.uploader.upload(req.file.path);
 
     let usuario = new Usuario({
         nombre: body.nombre,
         apellido: body.apellido,
         cedula: body.cedula,
         password: bcrypt.hashSync(body.password, 10),
-        role: body.role
+        role: body.role,
+        result:body.result
     });
     
 
