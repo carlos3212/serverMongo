@@ -26,9 +26,11 @@ let usuarioSchema = new Schema({
         type: String,
         required: true
     },
-    result: {
-        imageURL: String,
-        public_id: String
+    
+    img: {
+        type: String,
+        required: true,
+        
     },
     role: {
         type: String,
